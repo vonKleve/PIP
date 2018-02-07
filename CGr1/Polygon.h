@@ -5,26 +5,26 @@
 
 using std::vector;
 
-struct Point 
+struct UPoint 
 {
 	double x, y;
-	Point(double ix, double iy) : x(ix), y(iy) {};
+	UPoint(double ix, double iy) : x(ix), y(iy) {};
 };
 
-class Polygon
+class UPolygon
 {
 public:
-	explicit Polygon(vector<Point *> pp) : points_(pp) {};
-	virtual ~Polygon() {};
+	explicit UPolygon(vector<UPoint *> pp) : points_(pp) {};
+	virtual ~UPolygon() {};
 
-	void operator=(vector<Point *> pp);
-	Point* at(size_t index);
-	void set(size_t index, Point * p);
+	void operator=(vector<UPoint *> pp);
+	UPoint* at(size_t index);
+	void set(size_t index, UPoint * p);
 	void resize(size_t size);
 	size_t size();
 
-	std::_Vector_iterator<std::_Vector_val<std::_Simple_types<Point *>>> begin();
-	std::_Vector_iterator<std::_Vector_val<std::_Simple_types<Point *>>> end();
+	std::_Vector_iterator<std::_Vector_val<std::_Simple_types<UPoint *>>> begin();
+	std::_Vector_iterator<std::_Vector_val<std::_Simple_types<UPoint *>>> end();
 private:
-	vector<Point *> points_;
+	vector<UPoint *> points_;
 };
